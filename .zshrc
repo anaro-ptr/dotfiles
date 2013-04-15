@@ -120,6 +120,10 @@ export CLICOLOR=$LS_COLORS
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+# リスト表示
+alias ll='ls -l'
+# rm時に確認を行わせるようにする
+alias rm='rm -i'
 # 端末を256色に
 export TERM=xterm-256color
 
