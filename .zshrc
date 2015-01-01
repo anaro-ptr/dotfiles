@@ -1,7 +1,3 @@
-# Created by newuser for 5.0.2
-# Lines configured by zsh-newuser-install
-# End of lines cofigured by zsh-newuser-install
-# The following lines were added by compinstall
 zstyle :compinstall filename '$HOME/.zshrc'
 
 # 補完機能の有効化
@@ -23,7 +19,6 @@ setopt pushd_to_home
 # 絶対パスを入った変数をディレクトリとして扱う
 setopt cdable_vars
 
-# --------------- 補完関連の設定 --------------- 
 # 補完候補が複数あるときに自動的にメニューをリストアップ
 setopt auto_list
 # 連続する補完要求があると自動的にメニューをリストアップ
@@ -41,7 +36,6 @@ setopt list_rows_first
 # 補完候補にファイル情報
 setopt list_types
 
-# --------------- ファイルグロブの設定 --------------- 
 # ファイルグロブの有効化
 setopt glob
 # 拡張グロブの有効化 []の外でも^の使用可など
@@ -56,7 +50,6 @@ setopt numeric_glob_sort
 # 途中でエラーがあっても結果を表示する
 setopt nomatch
 
-# --------------- ヒストリの設定 --------------- 
 # セッションが終了した際にヒストリに追記
 setopt append_history
 # !によるヒストリ展開の有効化
@@ -78,7 +71,6 @@ setopt hist_reduce_blanks
 # ヒストリファイル保存時に古いコマンドと同じなら無視する
 setopt hist_save_no_dups
 
-# --------------- 入出力の設定 --------------- 
 # エイリアスの有効化
 setopt aliases
 # コマンド名のスペル訂正
@@ -100,39 +92,37 @@ setopt path_dirs
 # 制御構文で短縮形の有効化
 setopt short_loops
 
-# --------------- ジョブ制御の設定 --------------- 
 # バックグラウンドジョブを低優先度で実行
 setopt bg_nice
 # ジョブ制御を可能にする
 setopt monitor
 # バックグラウンドジョブの状態を即時表示
 setopt notify
-
+# ディレクトリを変数として扱う
 set cdable_vars
-# End of lines added by compinstall
+# '#'以降をコメントとして扱う
+setopt interactive_comments
 
-
-# --------------- カラーリングの設定 --------------- 
+# カラーリングの設定
 export LSCOLORS=Exfxcxdxbxegedabagacad
 export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
 export CLICOLOR=$LS_COLORS
-# grepを色付けで行う
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
-# リスト表示
-alias ll='ls -l'
-# rm時に確認を行わせるようにする
-alias rm='rm -i'
-# 端末を256色に
 export TERM=xterm-256color
+
+# ls
+alias ll='ls -l'
+alias la='ls -la'
+# grep
+alias gr='grep --color=auto'
+alias fgr='fgrep --color=auto'
+alias egr='egrep --color=auto'
+# rm
+alias rm='rm -i'
+# git
+alias g='git'
 
 # autoloadされる関数を検索するパスの追加
 fpath=($fpath ~/.zfunc)
-
-# 重複した設定の自動削除
-typeset -U path cdpath fpath manpath
-
 
 # プロンプトの設定
 setopt PROMPT_SUBST
@@ -149,5 +139,9 @@ precmd () {
 # 右プロンプトの設定
 RPROMPT="%1(v|%F{green}%1v%f|)"
 
-# '#'以降をコメントとして扱う
-setopt interactive_comments
+# rbenv
+export PATH=$HOME/.rbenv/bin:$PATH
+eval "$(rbenv init - zsh)"
+
+# 重複した設定の自動削除
+typeset -U path cdpath fpath manpath
