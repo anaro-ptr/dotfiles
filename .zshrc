@@ -109,18 +109,6 @@ export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30
 export CLICOLOR=$LS_COLORS
 export TERM=xterm-256color
 
-# ls
-alias ll='ls -l'
-alias la='ls -la'
-# grep
-alias gr='grep --color=auto'
-alias fgr='fgrep --color=auto'
-alias egr='egrep --color=auto'
-# rm
-alias rm='rm -i'
-# git
-alias g='git'
-
 # autoloadされる関数を検索するパスの追加
 fpath=($fpath ~/.zfunc)
 
@@ -139,9 +127,26 @@ precmd () {
 # 右プロンプトの設定
 RPROMPT="%1(v|%F{green}%1v%f|)"
 
+# 重複したパスの自動削除
+typeset -U path cdpath fpath manpath
+
 # rbenv
 export PATH=$HOME/.rbenv/bin:$PATH
 eval "$(rbenv init - zsh)"
 
-# 重複した設定の自動削除
-typeset -U path cdpath fpath manpath
+# ls
+alias ll='ls -l'
+alias la='ls -la'
+# grep
+alias gr='grep --color=auto'
+alias fgr='fgrep --color=auto'
+alias egr='egrep --color=auto'
+# rm
+alias rm='rm -i'
+# git
+alias g='git'
+# Homebrew
+alias b='brew'
+# tmux
+alias t='tmux'
+alias ta='tmux attach'
