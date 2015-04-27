@@ -134,6 +134,15 @@ typeset -U path cdpath fpath manpath
 export PATH=$HOME/.rbenv/bin:$PATH
 eval "$(rbenv init - zsh)"
 
+if [[ -s $HOME/.nvm/nvm.sh ]];
+	then source $HOME/.nvm/nvm.sh
+fi
+
+if [ -d ${HOME}/.zsh/zsh-completions/src ] ; then
+	fpath=(${HOME}/.zsh/zsh-completions/src $fpath)
+	compinit
+fi
+
 # ls
 alias ll='ls -l'
 alias la='ls -la'
