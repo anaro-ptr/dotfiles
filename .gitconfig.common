@@ -1,0 +1,33 @@
+[core]
+	editor = vim
+[color]
+	ui = auto
+[alias]
+	a = add
+	b = branch
+	c = commit
+	d = diff
+	f = fetch
+	k = !gitk
+	l = log
+	s = stash
+	r = rebase
+	ca = commit --amend
+	co = checkout
+	ds = diff --staged
+	gr = grep
+	pr = pull --rebase origin master
+	rs = reset
+	st = status
+	sh = show
+	tr = log --graph --pretty='format:%C(red)%h%Creset -%C(yellow)%d%Creset %s %C(green)(%cr) %C(blue)<%an>%Creset' --decorate --abbrev-commit --date=relative
+	chp = cherry-pick
+	dfx = !git diff | gitx
+	dhh = diff HEAD^
+	topic = "!sh -c 'git co -b $1 master' dummy"
+	unstage = reset HEAD --
+
+	#git svn
+	sr = svn rebase
+	sf = svn fetch
+	sdc = svn dcommit
