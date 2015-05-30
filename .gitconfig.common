@@ -10,6 +10,7 @@
 	f = fetch
 	k = !gitk
 	l = log
+	p = prune
 	s = stash
 	r = rebase
 	ca = commit --amend
