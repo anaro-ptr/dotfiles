@@ -1,4 +1,3 @@
-
 # aliases
 alias ls='ls -F --color=auto'
 alias ll='ls -la'
@@ -11,3 +10,8 @@ alias cp='cp -i'
 alias g='git'
 alias t='tmux'
 alias ta='tmux attach'
+
+# completion
+if [ -f ~/.git-completion.bash ]; then
+  source ~/.git-completion.bash
+fi
