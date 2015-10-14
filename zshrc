@@ -112,20 +112,9 @@ export TERM=xterm-256color
 # autoloadされる関数を検索するパスの追加
 fpath=($fpath ~/.zfunc)
 
-# プロンプトの設定
 setopt PROMPT_SUBST
-PROMPT="[%n@%m] %{${fg[cyan]}%}%~ %{${fg[white]}%}%# "
 
-autoload -Uz vcs_info
-zstyle ':vcs_info:*' format '(%s)[%b]'
-zstyle ':vcs_info:*' actionformats '(%s)[%b|%a]'
-precmd () {
-	psvar=()
-	LANG=en_US.UTF-8 vcs_info
-	[[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
-}
-# 右プロンプトの設定
-RPROMPT="%1(v|%F{green}%1v%f|)"
+source ${HOME}/.zsh/prompt.zsh
 
 # 重複したパスの自動削除
 typeset -U path cdpath fpath manpath
