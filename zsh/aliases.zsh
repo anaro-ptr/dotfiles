@@ -1,3 +1,5 @@
+setopt aliases
+
 # ls
 alias ls='ls -F --color=auto'
 alias ll='ls -l'
@@ -23,7 +25,9 @@ alias gd='g diff'
 alias gds='g diff --staged'
 alias gf='g fetch'
 alias ggr='g grep'
-alias gpr='g pull --rebase'
+alias ggr='g grep'
+alias gl='g log'
+alias glr='g log --reverse'
 alias gm='g merge'
 alias gmv='g mv'
 alias gr='g rebase'
@@ -34,7 +38,12 @@ alias gtr='g tree'
 
 # Homebrew
 alias b='brew'
+alias bi='brew install'
+alias bs='brew search'
+alias bu='brew update'
+alias bug='brew upgrade'
 
 # tmux
 alias t='tmux'
 alias ta='tmux attach'
+alias td='tmux detach'
