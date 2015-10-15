@@ -3,7 +3,6 @@ zstyle :compinstall filename '$HOME/.zshrc'
 # 補完機能の有効化
 autoload -U compinit
 compinit
-
 # プロンプトのカラー化
 autoload -U colors
 colors
@@ -20,21 +19,7 @@ fpath=($fpath ~/.zfunc)
 source ${HOME}/.zsh/options.zsh
 source ${HOME}/.zsh/aliases.zsh
 source ${HOME}/.zsh/prompt.zsh
+source ${HOME}/.zsh/paths.zsh
 
 # 重複したパスの自動削除
 typeset -U path cdpath fpath manpath
-
-if [[ -d ${HOME}/.rbenv/ ]]; then
-	export PATH=${HOME}/.rbenv/bin:$PATH
-	eval "$(rbenv init - zsh)"
-fi
-
-if [[ -s ${HOME}/.nvm/nvm.sh ]];
-	then source ${HOME}/.nvm/nvm.sh
-fi
-
-if [ -d ${HOME}/.zsh/zsh-completions/src ] ; then
-	fpath=(${HOME}/.zsh/zsh-completions/src $fpath)
-	compinit
-fi
-
