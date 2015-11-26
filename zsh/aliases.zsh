@@ -33,6 +33,7 @@ alias gmv='g mv'
 alias gr='g rebase'
 alias grm='g rm'
 alias grs='g reset'
+alias gs='g stash'
 alias gst='g status'
 alias gtr='g tree'
 
