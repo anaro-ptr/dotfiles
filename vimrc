@@ -36,6 +36,9 @@ if dein#load_state(s:dein_dir)
   " if has lua
   call dein#add('Shougo/neocomplete.vim', { 'if' : has('lua') })
 
+  call dein#add('vim-jp/vim-cpp', {
+    \ 'on_ft': ['cpp'],
+    \ 'lazy': 1 })
 
   call dein#end()
   call dein#save_state()
