@@ -26,6 +26,8 @@ if dein#load_state(s:dein_dir)
     \ 'depends': ['vimproc'],
     \ 'on_cmd': ['Unite'],
     \ 'lazy': 1 })
+  call dein#add('Shougo/unite-outline', {
+    \ 'depends': ['unite.vim'] })
   call dein#add('Shougo/vimshell', {
     \ 'depends': ['vimproc'],
     \ 'on_cmd': ['VimShell'],
