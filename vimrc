@@ -145,6 +145,10 @@ if has('gui_macvim')
 endif
 " end key mapping
 
+if len(glob('$HOME/.vim/local/*.vim')) > 0
+  runtime! local/*.vim
+endif
+
 " filetype on にした時点で登録済みのファイルタイプしか判定されない
 " on の時にonにしても意味がない
 filetype off
