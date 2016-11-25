@@ -22,5 +22,9 @@ source ${HOME}/.zsh/aliases.zsh
 source ${HOME}/.zsh/prompt.zsh
 source ${HOME}/.zsh/paths.zsh
 
+if [ -f "${HOME}/.zsh/locals.zsh" ]; then
+  source ${HOME}/.zsh/locals.zsh
+fi
+
 # 重複したパスの自動削除
 typeset -U path cdpath fpath manpath
