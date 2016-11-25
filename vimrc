@@ -126,8 +126,24 @@ if dein#tap('unite.vim')
   nnoremap <silent> ,vch :UniteBuildClearWithHighlight<CR>
 endif
 
-" キーマップ設定ファイル
-source $HOME/.vim/config/key.vim
+" key mapping
+nnoremap <silent> <Esc><Esc> :noh<CR>
+" xで削除した時にレジスタに乗せない
+nnoremap x "_x
+nnoremap X "_X
+" C-cでタブを新規に開く
+nnoremap <silent> <C-c> :tabnew<CR>
+" 語句の頭から囲う
+nmap S ys$
+" 語句の中腹から囲う
+nmap yS yss
+" 囲い文字を削除する
+nmap dS ds
+if has('gui_macvim')
+  " 自然に<Leader>を入力する
+  nmap ¥ <Leader>
+endif
+" end key mapping
 
 " filetype on にした時点で登録済みのファイルタイプしか判定されない
 " on の時にonにしても意味がない
