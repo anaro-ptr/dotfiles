@@ -126,6 +126,11 @@ if dein#tap('unite.vim')
   nnoremap <silent> ,vch :UniteBuildClearWithHighlight<CR>
 endif
 
+if dein#tap('vimshell')
+  let g:vimshell_prompt_expr = 'getcwd()." > "'
+  let g:vimshell_prompt_pattern = '^\f\+ >'
+endif
+
 " key mapping
 nnoremap <silent> <Esc><Esc> :noh<CR>
 " xで削除した時にレジスタに乗せない
