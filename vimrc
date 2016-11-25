@@ -20,6 +20,7 @@ endif
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
   call dein#add('Shougo/dein.vim')
+  call dein#add('tyru/caw.vim')
   call dein#add('Shougo/vimproc', { 'build': 'make' })
   call dein#add('Shougo/unite.vim', {
     \ 'depends': ['vimproc'],
@@ -32,6 +33,7 @@ if dein#load_state(s:dein_dir)
 
   " if has lua
   call dein#add('Shougo/neocomplete.vim', { 'if' : has('lua') })
+
 
   call dein#end()
   call dein#save_state()
@@ -129,6 +131,11 @@ endif
 if dein#tap('vimshell')
   let g:vimshell_prompt_expr = 'getcwd()." > "'
   let g:vimshell_prompt_pattern = '^\f\+ >'
+endif
+
+if dein#tap('caw.vim')
+  nmap <Leader>c <Plug>(caw:hatpos:toggle)
+  vmap <Leader>c <Plug>(caw:hatpos:toggle)
 endif
 
 " key mapping
