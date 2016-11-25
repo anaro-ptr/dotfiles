@@ -3,6 +3,7 @@ zstyle :compinstall filename '$HOME/.zshrc'
 # 補完機能の有効化
 autoload -U compinit
 compinit
+zstyle ':completion:*:default' menu select=1
 # プロンプトのカラー化
 autoload -U colors
 colors
