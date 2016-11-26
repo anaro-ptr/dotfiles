@@ -144,6 +144,7 @@ if dein#tap('caw.vim')
 endif
 
 " key mapping
+nmap co :copen<CR>
 nnoremap <silent> <Esc><Esc> :noh<CR>
 " xで削除した時にレジスタに乗せない
 nnoremap x "_x
