@@ -80,7 +80,7 @@ if dein#tap('neocomplete.vim')
   " <CR>: close popup and save indent.
   inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
   function! s:my_cr_function()
-  	return neocomplete#close_popup() . "\<CR>"
+    return neocomplete#close_popup() . "\<CR>"
   endfunction
   " <TAB>: completion.
   inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
