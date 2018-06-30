@@ -1,7 +1,12 @@
 setopt aliases
 
 # ls
-alias ls='ls -F --color=auto'
+case "${OSTYPE}" in
+darwin*)
+  alias ls='ls -F -G' ;;
+linux*)
+  alias ls='ls -F --color=auto' ;;
+esac
 alias ll='ls -l'
 alias la='ls -la'
 
